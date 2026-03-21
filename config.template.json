@@ -1,0 +1,29 @@
+{
+  "imap": {
+    "server": "",
+    "email": "",
+    "password": "",
+    "folder": ""
+  },
+  "anthropic": {
+    "api_key": "",
+    "model": ""
+  },
+  "telegram": {
+    "bot_token": "",
+    "chat_id": ""
+  },
+  "filters": {
+    "ktc": [],
+    "kbank": [],
+    "subscriptions": []
+  },
+  "budgets": {
+    "total": "",
+    "per_category": {}
+  },
+  "alert_threshold": 0.85,
+  "report_time": "21:00",
+  "currency": "THB",
+  "language": "en"
+}

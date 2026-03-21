@@ -1,0 +1,8 @@
+anthropic
+fastapi
+uvicorn
+python-telegram-bot[job-queue]
+imaplib2
+python-dotenv
+aiofiles
+websockets
