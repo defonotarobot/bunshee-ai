@@ -45,3 +45,5 @@ Thumbs.db
 # Project-specific
 config.json
 *.db
+.env
+spending.db

@@ -1,1 +1,24 @@
-// Entry point that mounts the React application into the DOM
+import React from 'react'
+import ReactDOM from 'react-dom/client'
+import App from './App.jsx'
+
+const style = document.createElement('style')
+style.textContent = `
+  *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+  body {
+    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+    background: #0f1117;
+    color: #e2e8f0;
+    min-height: 100vh;
+  }
+  ::-webkit-scrollbar { width: 6px; }
+  ::-webkit-scrollbar-track { background: #1a1d27; }
+  ::-webkit-scrollbar-thumb { background: #374151; border-radius: 3px; }
+`
+document.head.appendChild(style)
+
+ReactDOM.createRoot(document.getElementById('root')).render(
+  <React.StrictMode>
+    <App />
+  </React.StrictMode>
+)
