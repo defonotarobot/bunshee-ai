@@ -1,0 +1,87 @@
+id,timestamp,source,merchant,amount,currency,category,clarification_needed,notes
+23,2026-03-26T08:54:57,KBank,MR. CHANCHIT BENJAPORN,125.0,THB,Uncategorised,1,"Source: KBank QR Payment
+Recipient: MR. CHANCHIT BENJAPORN
+Amount: 125.00 THB
+Note: Recipient appears to be a person — clarification likely needed"
+20,2026-03-25T23:10:13,KTC,WWW,180.0,THB,Uncategorised,0,"Source: KTC Credit Card
+Merchant: WWW
+Amount: 180.00 THB"
+22,2026-03-25T12:35:45,KBank,MRS PRALOM PONGTANYAWICHAI,8.0,THB,Uncategorised,1,"Source: KBank QR Payment
+Recipient: MRS PRALOM PONGTANYAWICHAI
+Amount: 8.00 THB
+Note: Recipient appears to be a person — clarification likely needed"
+21,2026-03-25T09:36:26,KBank,MR. CHANCHIT BENJAPORN,65.0,THB,Uncategorised,1,"Source: KBank QR Payment
+Recipient: MR. CHANCHIT BENJAPORN
+Amount: 65.00 THB
+Note: Recipient appears to be a person — clarification likely needed"
+19,2026-03-24T20:49:17,KBank,MS. CHAMAIPHON SANWATTHANA,2000.0,THB,Uncategorised,1,"Source: KBank QR Payment
+Recipient: MS. CHAMAIPHON SANWATTHANA
+Amount: 2000.00 THB
+Note: Recipient appears to be a person — clarification likely needed"
+18,2026-03-24T19:24:45,KBank,MS. SOMBOON RANGREW,1000.0,THB,Uncategorised,1,"Source: KBank QR Payment
+Recipient: MS. SOMBOON RANGREW
+Amount: 1000.00 THB
+Note: Recipient appears to be a person — clarification likely needed"
+15,2026-03-24T19:22:40,KTC,LINEPAY*LP_LINE MAN,145.0,THB,Uncategorised,1,"Source: KTC Credit Card
+Merchant: LINEPAY*LP_LINE MAN
+Amount: 145.00 THB
+Note: Merchant looks like a digital service — subscription check needed
+[subscription_check: pending]"
+14,2026-03-24T18:46:34,KTC,LINEPAY*LP_LINE MAN,143.0,THB,Uncategorised,1,"Source: KTC Credit Card
+Merchant: LINEPAY*LP_LINE MAN
+Amount: 143.00 THB
+Note: Merchant looks like a digital service — subscription check needed
+[subscription_check: pending]"
+13,2026-03-24T18:44:51,KTC,WWW,153.0,THB,Uncategorised,0,"Source: KTC Credit Card
+Merchant: WWW
+Amount: 153.00 THB"
+17,2026-03-24T12:23:20,KBank,MR. TANAKRIT PETCHTONGPU,60.0,THB,Uncategorised,1,"Source: KBank QR Payment
+Recipient: MR. TANAKRIT PETCHTONGPU
+Amount: 60.00 THB
+Note: Recipient appears to be a person — clarification likely needed"
+16,2026-03-24T12:13:49,KBank,KATANCHALI BU,55.0,THB,Uncategorised,0,"Source: KBank QR Payment
+Recipient: KATANCHALI BU
+Amount: 55.00 THB"
+12,2026-03-23T12:17:40,KBank,MR. TANAKRIT PETCHTONGPU,50.0,THB,Uncategorised,1,"Source: KBank QR Payment
+Recipient: MR. TANAKRIT PETCHTONGPU
+Amount: 50.00 THB
+Note: Recipient appears to be a person — clarification likely needed"
+11,2026-03-23T09:46:58,KBank,MRS PRALOM PONGTANYAWICHAI,8.0,THB,Uncategorised,1,"Source: KBank QR Payment
+Recipient: MRS PRALOM PONGTANYAWICHAI
+Amount: 8.00 THB
+Note: Recipient appears to be a person — clarification likely needed"
+10,2026-03-23T09:22:45,KBank,NONGNUCH TOSA,60.0,THB,Uncategorised,0,"Source: KBank QR Payment
+Recipient: NONGNUCH TOSA
+Amount: 60.00 THB"
+9,2026-03-22T15:40:04,KBank,MRS. RATIRAT CHUMCHONG,265.0,THB,Uncategorised,0,"Source: KBank QR Payment
+Recipient: MRS. RATIRAT CHUMCHONG
+Amount: 265.00 THB
+Note: Recipient appears to be a person — clarification likely needed
+[Resolved: mont nomsod]"
+8,2026-03-22T14:52:49,KBank,MS. CHANIKANT ARIYADURIYANG,120.0,THB,Uncategorised,0,"Source: KBank QR Payment
+Recipient: MS. CHANIKANT ARIYADURIYANG
+Amount: 120.00 THB
+Note: Recipient appears to be a person — clarification likely needed
+[Resolved: Kanomjeeb & Drinks]"
+7,2026-03-22T13:42:30,KBank,THEERAVUTH LE,2.0,THB,Uncategorised,0,"Source: KBank QR Payment
+Recipient: THEERAVUTH LE
+Amount: 2.00 THB
+[Resolved: Testing]"
+6,2026-03-22T13:14:21,KBank,MS. TIPPAWAN PINVANICHKUL,3.0,THB,Uncategorised,1,"Source: KBank QR Payment
+Recipient: MS. TIPPAWAN PINVANICHKUL
+Amount: 3.00 THB"
+5,2026-03-21T22:00:54,KBank,MS. TIPPAWAN PINVANICHKUL,2.0,THB,Uncategorised,1,"Source: KBank QR Payment
+Recipient: MS. TIPPAWAN PINVANICHKUL
+Amount: 2.00 THB"
+4,2026-03-21T21:34:28,KBank,MS. TIPPAWAN PINVANICHKUL,1.0,THB,Uncategorised,1,"Source: KBank QR Payment
+Recipient: MS. TIPPAWAN PINVANICHKUL
+Amount: 1.00 THB"
+3,2026-03-21T20:59:43,KBank,MASTER NAPONG LEELASITHORN,1.0,THB,Uncategorised,1,"Source: KBank QR Payment
+Recipient: MASTER NAPONG LEELASITHORN
+Amount: 1.00 THB"
+2,2026-03-20T12:56:59,KBank,MR THUN THARNTHARIN,65.0,THB,Uncategorised,1,"Source: KBank QR Payment
+Recipient: MR THUN THARNTHARIN
+Amount: 65.00 THB"
+1,2026-03-20T09:42:03,KBank,MR. CHANCHIT BENJAPORN,65.0,THB,Uncategorised,1,"Source: KBank QR Payment
+Recipient: MR. CHANCHIT BENJAPORN
+Amount: 65.00 THB"

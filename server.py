@@ -183,14 +183,22 @@ def create_app(config: dict, db) -> FastAPI:
 
     @app.post("/api/sync")
     async def trigger_sync():
-        """Trigger process_pending.py — picks up any .eml files saved by watcher.py"""
+        """Run fetch.py then process.py — fetch new emails, then parse and insert."""
         import asyncio, sys
-        proc = await asyncio.create_subprocess_exec(
-            sys.executable, str(Path(__file__).parent / "process_pending.py"),
-            stdout=asyncio.subprocess.PIPE, stderr=asyncio.subprocess.PIPE,
-        )
-        stdout, stderr = await proc.communicate()
-        return {"status": "sync_triggered", "output": stdout.decode()}
+        project_dir = str(Path(__file__).parent)
+        results = {}
+        for script in ["fetch.py", "process.py"]:
+            proc = await asyncio.create_subprocess_exec(
+                sys.executable, str(Path(__file__).parent / script),
+                stdout=asyncio.subprocess.PIPE,
+                stderr=asyncio.subprocess.PIPE,
+                cwd=project_dir,
+            )
+            stdout, stderr = await proc.communicate()
+            out = stdout.decode()
+            err = stderr.decode()
+            results[script] = {"output": out, "error": err if err else None}
+        return {"status": "sync_triggered", **results}
 
     # ---- WebSocket ----------------------------------------------------------
 

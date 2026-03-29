@@ -1,0 +1,121 @@
+Delivered-To: thr.leelasithorn@gmail.com
+Received: by 2002:a05:6214:230c:b0:89a:17ec:1b2d with SMTP id gc12csp1532891qvb;
+        Tue, 24 Mar 2026 06:49:23 -0700 (PDT)
+X-Received: by 2002:a17:902:db06:b0:2ad:da28:98d with SMTP id d9443c01a7336-2b0827a7f51mr157849255ad.37.1774360163599;
+        Tue, 24 Mar 2026 06:49:23 -0700 (PDT)
+ARC-Seal: i=1; a=rsa-sha256; t=1774360163; cv=none;
+        d=google.com; s=arc-20240605;
+        b=MgKi6s/O8by1Rex4IA6kvPx8VSpG4FG1mpDNFZObFuPGiyjXanFdo6M6tNzVOu/AB2
+         PaGJZHb5HceorP2RSmioVww5860XnyuSEXR4sAfcoHumDXTgQ46VNqm2eG/uOnGjrm0/
+         gH+FIcZvagvxRWiLLrVpqIjt4KvRUa1rdVNH2PSUdqKMapMH+Wss9HUUI3OlRcQfV42C
+         CTjpQFkkPVFtvx9Vt9lTH9k32FwW4v+RSTRS77ivJj43mEIy6OJJi50oJhctNuDxrmcp
+         isTJWH9SEH25YFLdXZCA043f4a6GFtQJ/u/6k2j41ZMgMXp61P7Tx7jcDx1bR1EKoQRI
+         kvvA==
+ARC-Message-Signature: i=1; a=rsa-sha256; c=relaxed/relaxed; d=google.com; s=arc-20240605;
+        h=content-transfer-encoding:mime-version:to:message-id:subject:date
+         :from:dkim-signature;
+        bh=zNnR5fkrPYdglNyUR5xmCPz9e7CTv1dZIGWqE+FtLKE=;
+        fh=NVPi+wTlbBWqe8raQmvFalNNiQh9PpH6UZMheRrgtEg=;
+        b=Qn24Zmd/Q2sfaiBt00JGu2nrnqCzfRyUHaZQHenZquAMHHV0mbd3Cid/XQKywgUCds
+         CzXn5lpE7KKPYiwtn1BwDiZ9KAu7p8z+nNkVP7SfyplLwnc+sUkXG6tS2xIRwKuTZ72J
+         kruQA7DyzWNzAQZW2TNbK77X9yX6bIvdEKaBzEa4xIFDJexhYsb30RUKwPR5x/co5ljp
+         axZ4MXOgJcVt/XBALnluWQQOlND7v2Nb9wIM6G5nvEGeEVEXzDW1QK/ZpPC+WWuGPvhl
+         /4H7ryduQbBQFU1SkEfQNONa08ER0+EbcNlJXyA91L6+5+LMA03FoY5njUt1lg4yO9/a
+         pLHg==;
+        dara=google.com
+ARC-Authentication-Results: i=1; mx.google.com;
+       dkim=pass header.i=@kasikornbank.com header.s=secure header.b=N1fZutA9;
+       spf=pass (google.com: domain of kplus@kasikornbank.com designates 203.146.18.13 as permitted sender) smtp.mailfrom=KPLUS@kasikornbank.com;
+       dmarc=pass (p=REJECT sp=REJECT dis=NONE) header.from=kasikornbank.com
+Return-Path: <KPLUS@kasikornbank.com>
+Received: from Outbound23.kasikornbank.com (outbound23.kasikornbank.com. [203.146.18.13])
+        by mx.google.com with ESMTPS id d9443c01a7336-2b0836968c9si249470925ad.156.2026.03.24.06.49.22
+        for <thr.leelasithorn@gmail.com>
+        (version=TLS1_2 cipher=ECDHE-ECDSA-CHACHA20-POLY1305 bits=256/256);
+        Tue, 24 Mar 2026 06:49:23 -0700 (PDT)
+Received-SPF: pass (google.com: domain of kplus@kasikornbank.com designates 203.146.18.13 as permitted sender) client-ip=203.146.18.13;
+Authentication-Results: mx.google.com;
+       dkim=pass header.i=@kasikornbank.com header.s=secure header.b=N1fZutA9;
+       spf=pass (google.com: domain of kplus@kasikornbank.com designates 203.146.18.13 as permitted sender) smtp.mailfrom=KPLUS@kasikornbank.com;
+       dmarc=pass (p=REJECT sp=REJECT dis=NONE) header.from=kasikornbank.com
+DKIM-Signature: v=1; a=rsa-sha256; c=simple/simple;
+  d=kasikornbank.com; i=@kasikornbank.com; q=dns/txt;
+  s=secure; t=1774360163; x=1805896163;
+  h=from:date:subject:message-id:to:mime-version:
+   content-transfer-encoding;
+  bh=mC7b7lDSYlKpA1N1wWMExU/oISJtINvh02CB7cHshtE=;
+  b=N1fZutA9V9+wWwAWpMoHbpKT4mWgcqEWZalwfbx5dkBKrDfvcO2ORNYI
+   42mVfhBjTx7gsd7kHbuow6PvRvJ6qnHgDO4N20lCckkm5gtROEBiKW4G8
+   H6z8gVlMjSLDw582O9y8boQhBejepcMIh61PREHyK926sGR1azd2rytAv
+   nfI4b1gSiXwKlerwT9tFmubIH/+jb7lsW3Om7OvPPhjVnBHqZGh3Zllow
+   diSUk2a9kR58fnCrwFUkPrgqhMDI55Xf/09Xh8lSXurO8cqejbZhXKcpG
+   fu1FXY6tds4stXe8mc1M2qbgei176Fq84aRI89TUPmhFjFOK0j6notUhl
+   g==;
+X-CSE-ConnectionGUID: 1lrgrCy+Rg2c/oBJ5xB+ZQ==
+X-CSE-MsgGUID: wmCDd6xhSp+/v0O3Ni0AEQ==
+Received: from unknown (HELO [20.20.18.255]) ([192.168.23.61])
+  by Outbound15.kasikornbank.com with ESMTP; 24 Mar 2026 20:49:17 +0700
+From: K PLUS <KPLUS@kasikornbank.com>
+Date: Tue, 24 Mar 2026 20:49:17 +0700
+Subject: Result of Funds Transfer (Success)
+Message-Id: <7HTFYU8ZTSU4.RB36RHD5N6NB1@transfer-service-1>
+To: "thr.leelasithorn@gmail.com" <thr.leelasithorn@gmail.com>
+MIME-Version: 1.0
+Content-Type: text/plain; charset=utf-8
+Content-Transfer-Encoding: 8bit
+
+เรียน ผู้ใช้โทรศัพท์มือถือหมายเลข 06-XXXX-9616
+เรื่อง แจ้งผลการทำรายการโอนเงิน (สำเร็จ)
+
+ตามที่ คุณได้ทำรายการโอนเงินผ่านบริการ K PLUS โดยมีรายละเอียด ดังนี้
+
+	วันที่ทำรายการ: 24/03/2026  20:49:17
+	เลขที่รายการ: 016083204917DTF01030
+	โอนเงินจากบัญชี: xxx-x-x7804-x
+	ธนาคารผู้รับเงิน: ธนาคารกสิกรไทย
+	เพื่อเข้าบัญชี: 182-8-06041-0
+	ชื่อบัญชี: น.ส. ชไมพร สรรค์วรรธนะ
+	จำนวนเงิน (บาท): 2,000.00
+	ค่าธรรมเนียม (บาท): 0.00
+	ยอดถอนได้ (บาท): 701.25
+
+ธนาคารขอเรียนให้ทราบว่า ธนาคารได้ดำเนินการโอนเงินตามที่คุณได้ทำรายการไว้เรียบร้อยแล้ว  ทั้งนี้ คุณสามารถตรวจสอบผลของการทำรายการได้ ที่เมนูประวัติการทำรายการ
+
+สอบถามข้อมูลเพิ่มเติมได้ที่:
+	- K-Contact Center (24 ชั่วโมง) โทร. 02-8888888 กด 03
+	- อีเมล: info@kasikornbank.com
+	- Facebook: KBank Live
+	- LINE Official Account: @kbanklive
+
+ขอแสดงความนับถือ
+บมจ. ธนาคารกสิกรไทย
+
+
+Dear Customer of mobile number 06-XXXX-9616
+Subject: Result of Funds Transfer (Success)
+
+With reference to your request for funds transfer via K PLUS Service as follows:
+
+	Transaction Date: 24/03/2026  20:49:17
+	Transaction Number: 016083204917DTF01030
+	From Account: xxx-x-x7804-x
+	To Bank: KASIKORNBANK
+	To Account: 182-8-06041-0
+	Account Name: MS. CHAMAIPHON SANWATTHANA
+	Amount (THB): 2,000.00
+	Fee (THB): 0.00
+	Available Balance (THB): 701.25
+
+We wish to inform you that the funds transfer has been successfully completed.   You can check the transaction result by viewing at transaction history menu.
+
+Should you require further information, please kindly contact:
+	- K-Contact Center (24 hours) at Tel. +662-8888888 ext. 803
+	- Email: info@kasikornbank.com
+	- Facebook: KBank Live
+	- LINE Official Account: @kbanklive
+
+Yours sincerely,
+KASIKORNBANK PCL.
+
+*********************************************************************************************
+Please do not respond directly to this email, as it has been generated by an automated system.

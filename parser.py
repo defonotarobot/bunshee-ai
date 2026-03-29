@@ -19,6 +19,8 @@ KBank QR email format  (from: KPLUS@kasikornbank.com):
 Anything that isn't KTC or KBank is ignored.
 """
 
+from __future__ import annotations
+
 import re
 import email
 import email.message
@@ -72,13 +74,32 @@ _KB_COMPANY_EN = re.compile(
 _KB_COMPANY_TH = re.compile(
     r"เพื่อเข้าบัญชีบริษัท\s*:\s*(.+?)(?:\n|$)"
 )
+# Funds Transfer format uses "Account Name:" instead of "Company Name:"
+_KB_ACCOUNT_EN = re.compile(
+    r"Account Name\s*:\s*(.+?)(?:\n|$)", re.IGNORECASE
+)
+_KB_ACCOUNT_TH = re.compile(
+    r"ชื่อบัญชี\s*:\s*(.+?)(?:\n|$)"
+)
+# PromptPay format uses "Received Name:"
+_KB_RECEIVED_EN = re.compile(
+    r"Received Name\s*:\s*(.+?)(?:\n|$)", re.IGNORECASE
+)
+_KB_RECEIVED_TH = re.compile(
+    r"ชื่อผู้รับเงิน\s*:\s*(.+?)(?:\n|$)"
+)
 _KB_DATE_EN = re.compile(
     r"Transaction Date\s*:\s*(.+?)(?:\n|$)", re.IGNORECASE
 )
 
 # Person-name indicators (triggers clarification for KBank)
+# NOTE: Cannot use \b after "MR." because period→space has no word boundary.
+# Instead we match the prefix followed by \s (English) or just the prefix (Thai).
 _PERSON_RE = re.compile(
-    r"\b(MR\.|MS\.|MRS\.|นาย|นาง|นางสาว)\b", re.IGNORECASE
+    r"\b(MR\.?\s|MS\.?\s|MRS\.?\s|MASTER\s|MISS\s)"
+    r"|"
+    r"(นาย|นาง|นางสาว|น\.ส\.|ด\.ช\.|ด\.ญ\.)",
+    re.IGNORECASE,
 )
 
 # Digital / subscription-like merchant indicators (triggers subscription check for KTC)
@@ -241,7 +262,15 @@ def parse_kbank(raw: bytes) -> dict | None:
     body = _get_body(msg)
 
     m_amount  = _KB_AMOUNT_EN.search(body) or _KB_AMOUNT_TH.search(body)
-    m_company = _KB_COMPANY_EN.search(body) or _KB_COMPANY_TH.search(body)
+    # Bill Payment: "Company Name:", Funds Transfer: "Account Name:", PromptPay: "Received Name:"
+    m_company = (
+        _KB_COMPANY_EN.search(body)
+        or _KB_COMPANY_TH.search(body)
+        or _KB_ACCOUNT_EN.search(body)
+        or _KB_ACCOUNT_TH.search(body)
+        or _KB_RECEIVED_EN.search(body)
+        or _KB_RECEIVED_TH.search(body)
+    )
 
     if not m_amount or not m_company:
         logger.warning("KBank: could not extract amount/company from body")
@@ -260,7 +289,7 @@ def parse_kbank(raw: bytes) -> dict | None:
     if ac_name:
         merchant = f"{company_raw} ({ac_name})"
 
-    # Detect person-to-person transfers (QR to individual)
+    # Detect person-to-person transfers (QR to individual or funds transfer)
     is_person = bool(_PERSON_RE.search(company_raw + " " + (ac_name or "")))
 
     snippet = (
